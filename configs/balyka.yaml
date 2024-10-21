@@ -1,0 +1,59 @@
+testname: Test wierności brzmienia dźwięku
+testId: engine_test
+bufferSize: 2048
+stopOnErrors: false
+showButtonPreviousPage: true
+remoteService: service/write.php
+language: pl
+
+pages:
+    - type: generic
+      id: first_page
+      name: Dzień dobry
+      content: Czy wyrażasz zgodę na udział w badaniu? Jeśli tak, naciśnij przycisk "Dalej" i postępuj zgodnie z instrukcjami. W przeciwnym przypadku opuść laboratorium.     
+    - type: mushra
+      id: trening
+      name: Trening
+      content: Oceń wierność brzmienia sześciu dźwięków rozumianą jako stopień, w jakim dźwięki zachowują swoje oryginalne brzmienie względem dźwięku odniesienia. Wypróbuj, jak działa test. Wyniki z tej strony nie będą zapisywane. Podczas odtwarzania dźwięków można korzystać ze skrótów klawiszowych: R - Odniesienie, 1 - Dzwięk 1, 2 - Dzwięk 2, 3 - Dzwięk 3 i tak dalej. Pamiętaj o wyregulowaniu poziomu głośności zgodnie z pisemną instrukcją.
+      showWaveform: true
+      enableLooping: true 
+      reference: configs/resources/audio_balyka/Sound_Reference.wav
+      randomize: true
+      stimuli:
+          Fmod: configs/resources/audio_balyka/Sound_Fmod.wav
+          Resonance: configs/resources/audio_balyka/Sound_Resonance.wav
+          Steam: configs/resources/audio_balyka/Sound_Steam.wav
+          Unreal: configs/resources/audio_balyka/Sound_Unreal.wav
+          Wwise: configs/resources/audio_balyka/Sound_Wwise.wav       
+    - type: mushra
+      id: trial1
+      name: Test 1
+      content: <p style="font-size: 24px;">Jaka jest wierność brzmienia dźwięków 1-6 względem dźwięku odniesienia?</p>
+      showWaveform: true
+      enableLooping: true 
+      reference: configs/resources/audio_balyka/Sound_Reference.wav
+      randomize: true
+      stimuli:
+          Fmod: configs/resources/audio_balyka/Sound_Fmod.wav
+          Resonance: configs/resources/audio_balyka/Sound_Resonance.wav
+          Steam: configs/resources/audio_balyka/Sound_Steam.wav
+          Unreal: configs/resources/audio_balyka/Sound_Unreal.wav
+          Wwise: configs/resources/audio_balyka/Sound_Wwise.wav       
+    - type: mushra
+      id: trial2
+      name: Test 2
+      content: <p style="font-size: 24px;">Jaka jest wierność brzmienia dźwięków 1-6 względem dźwięku odniesienia?</p>
+      showWaveform: true
+      enableLooping: true 
+      reference: configs/resources/audio_balyka/Sound_Reference.wav
+      randomize: true
+      stimuli:
+          Fmod: configs/resources/audio_balyka/Sound_Fmod.wav
+          Resonance: configs/resources/audio_balyka/Sound_Resonance.wav
+          Steam: configs/resources/audio_balyka/Sound_Steam.wav
+          Unreal: configs/resources/audio_balyka/Sound_Unreal.wav
+          Wwise: configs/resources/audio_balyka/Sound_Wwise.wav        
+    - type: finish
+      name: Test zakończony
+      content: Dziękujemy za udział!
+      writeResults: true
